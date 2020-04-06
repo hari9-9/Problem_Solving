@@ -13,6 +13,6 @@ if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
     a = input()
     b = input()
-    res = makeAnagram(a, b, 26)
+    res = makeAnagram(a, b, 25)
     fptr.write(str(res) + '\n')
     fptr.close()
