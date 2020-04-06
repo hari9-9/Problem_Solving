@@ -22,10 +22,6 @@ def makeAnagram(str1,str2):
     while i < len(str2): 
         c2[ord(str2[i])-ord('a')] += 1
         i += 1
-  
-    # traverse count arrays to find  
-    # number of characters 
-    # to be removed 
     result = 0
     for i in range(26): 
         result += abs(c1[i] - c2[i]) 
