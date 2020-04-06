@@ -32,7 +32,7 @@ public class Solution {
 
         String b = scanner.nextLine();
 
-        int res = makeAnagram(a, b, 26);
+        int res = makeAnagram(a, b, 25);
 
         bufferedWriter.write(String.valueOf(res));
         bufferedWriter.newLine();
