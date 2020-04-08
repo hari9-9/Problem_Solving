@@ -24,12 +24,10 @@ def isValid(s):
             count_dict[value] += 1
         else:
             count_dict[value] = 1
-        #also update max and min count
         if value < min_count:
             min_count = value
         if value > max_count:
             max_count = value
-    # final test:
     if len(count_dict) == 1:
         return 'YES'
     elif len(count_dict) == 2:
