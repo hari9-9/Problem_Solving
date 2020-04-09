@@ -8,40 +8,33 @@ import sys
 
 # Complete the minimumNumber function below.
 def minimumNumber(n, password):
-    numbers = "0123456789"
-    lower_case = "abcdefghijklmnopqrstuvwxyz"
-    upper_case = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    special_characters = "!@#$%^&*()-+"
-    score=0
-    if n>=6:
-        result=4
-        for alpha in password:
-            if(alpha in numbers):
-                score+=1
-        if score>0:
-            result-=1
-        score=0
-        for alpha in password:
-            if(alpha in lower_case):
-                score+=1
-        if score>0:
-            result-=1
-        score=0
-        for alpha in password:
-            if(alpha in upper_case):
-                score+=1
-        if score>0:
-            result-=1
-        score=0
-        for alpha in password:
-            if(alpha in special_characters):
-                score+=1
-        if score>0:
-            result-=1
-        score=0
-        return(result)
-    else:
-        return(6-n)
+    up=0
+    lo=0
+    sym=0
+    dig=0
+    count=0
+    for char in password:
+        if char.isalpha():
+            if char.isupper():
+                up+=1
+            else:
+                lo+=1
+        elif char.isdigit():
+            dig+=1
+        else:
+            sym+=1
+    if up<1:
+        count+=1
+    if lo<1:
+        count+=1
+    if sym<1:
+        count+=1
+    if dig<1:
+        count+=1
+    if(n+count)<6:
+        count+=6-(n+count)
+    return count
+
     # Return the minimum number of characters to make the password strong
 
 if __name__ == '__main__':
