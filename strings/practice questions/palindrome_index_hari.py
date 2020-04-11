@@ -5,17 +5,27 @@ import os
 import random
 import re
 import sys
-
-# Complete the palindromeIndex function below.
-def palindromeIndex(s):
-    pal=s
-    if s==s[::-1]:
-        return(-1)
-    for i in range(len(s)):
-        pal=s[:i]+s[i+1:]
-        if(pal==pal[::-1]):
-            return(i)
-    return(-1)
+def isPalindrome(string: str, low: int, high: int): 
+    while low < high: 
+        if string[low] != string[high]: 
+            return False
+        low += 1
+        high -= 1
+    return True
+def palindromeIndex(string):
+    low = 0
+    high = len(string) - 1
+    while low < high: 
+        if string[low] == string[high]: 
+            low += 1
+            high -= 1
+        else: 
+            if isPalindrome(string, low + 1, high): 
+                return low 
+            if isPalindrome(string, low, high - 1): 
+                return high 
+            return -1
+    return -1
 
 
 if __name__ == '__main__':
