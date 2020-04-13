@@ -1,1 +1,3 @@
-# hackerrank_interview_solns
+# hackerrank_solns
+
+a repositoty to store solutions to hackerrank problems.
