@@ -1,0 +1,41 @@
+##Day 0
+
+#inputting stuff:
+For reading a string input
+use,
+const input =readLine();
+
+#printing stuff:
+ using console.log(some_variable)
+ 
+#Data types:
+ Number data type
+      declaration: var var1 = 1;
+ String 
+      declaration: var first_string="Hello";
+      Js strings are immutable
+      Some methods 
+           A substring of the original by picking individual letters or using String.substr().
+           A concatenation of two strings using the concatenation operator (+) or String.concat().
+  Boolean
+  Symbol
+  Null
+  Undefined
+  
+  
+  The typeofOpearator:
+  usage example
+  var secondVar = 'Hello'; 
+  console.log(secondVar + " is a " + typeof secondVar);
+  will print:
+  Hello is a string
+  
+  
+  
+       
+           
+      
+    
+
+ 
+
