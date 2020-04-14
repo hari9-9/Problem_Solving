@@ -33,6 +33,13 @@ const input =readLine();
   While an input is read thru readLine() method it is in form of a string threfore to process it as a number use Number() method
   
   
+  ##Day 1
+  Arithmetic operators:
+                  all smae a c++ 
+                  exceptions ---- exponentiation is doen using **
+                  postfix and prefix operations are allowed in js
+                  
+                  
        
            
       
