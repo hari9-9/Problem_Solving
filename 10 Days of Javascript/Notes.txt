@@ -58,4 +58,19 @@ const input =readLine();
     We use the let keyword to declare variables that are limited in scope to the block, statement, or expression in which they are used. This is unlike the var keyword, which defines a variable globally or locally to an entire function regardless of block scope.
 
  
-
+##Day 2
+      Conditional statements:
+      if staement is same as cpp
+      if (condition1) {
+    statement1;
+} 
+else if (condition2) {
+    statement2;
+} 
+else if (conditionN) {
+    statementN;
+} 
+else {
+    statementLast;
+}
+                            
