@@ -38,8 +38,17 @@ const input =readLine();
                   all smae a c++ 
                   exceptions ---- exponentiation is doen using **
                   postfix and prefix operations are allowed in js
-                  
-                  
+                
+   Functions:
+                  declared using function keyword
+                  example of a function 
+                  function factorial(n) {
+                if (n > 1) {
+                    return n * factorial(n - 1);
+                }
+                // Returns 1 if n <= 1
+                return 1;
+            }
        
            
       
