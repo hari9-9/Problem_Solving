@@ -73,4 +73,36 @@ else if (conditionN) {
 else {
     statementLast;
 }
-                            
+ 
+ 
+ Loops:
+       for loop:
+               for (var i = 1; i <= input; i++) {
+        process.stdout.write(i + " ");
+    }
+    
+    While loop:
+while (i <= input) {
+        process.stdout.write(i + " ");
+
+        i++;
+        
+        Do while loop:
+        do {
+        process.stdout.write(i + " ");
+
+        i++;
+    } while (i <= input);
+}
+
+For in loop:
+for (var property in actress) {
+    console.log("actress." + property + " = " + actress[property]);
+}
+
+For of loop:
+ for (let value of array) {
+        console.log(value);
+
+
+    
