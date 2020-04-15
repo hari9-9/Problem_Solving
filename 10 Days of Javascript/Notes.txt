@@ -25,10 +25,10 @@ const input =readLine();
   
   The typeofOpearator:
   usage example
-  var secondVar = 'Hello'; 
-  console.log(secondVar + " is a " + typeof secondVar);
+     var secondVar = 'Hello'; 
+     console.log(secondVar + " is a " + typeof secondVar);
   will print:
-  Hello is a string
+     Hello is a string
   
   While an input is read thru readLine() method it is in form of a string threfore to process it as a number use Number() method
   
