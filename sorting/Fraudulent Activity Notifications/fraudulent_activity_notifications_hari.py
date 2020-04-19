@@ -1,33 +1,35 @@
 #!/bin/python3
-
+#intrestin algo reffer https://jjromi.github.io/2017/lucky_45/
 import math
 import os
 import random
 import re
 import sys
 
-def get_median(e):
-    e=sorted(e)
-    print(e)
-    if(len(e)%2==0):
-        return(int(((e[int(len(e)/2)])+(e[int(len(e)/2)]))/2))
-    else:
-        return(e[int(len(e)/2)])
+def get_median(count,d):
+    s=0
+    for i in range(len(count)):
+        s+=count[i]
+        if((2*s)==d):
+            return((2*i+1))
+        elif((2*s)>d):
+            return(2*i)
+    return(1)
 
 
 # Complete the activityNotifications function below.
 def activityNotifications(expenditure, d):
+    count=[0]*201
     notification=0
-    for i in range(len(expenditure)):
-        #print(i)
-        if i>d:
-            print(expenditure[i-d-1:i-1])
-            m=get_median(expenditure[i-d-1:i-1])
-            print(m,expenditure[i-1])
-
-            if expenditure[i-1]>=2*m:
-                notification+=1
-    return notification            
+    for i in range(d):
+        count[expenditure[i]]+=1
+    for i in range(d,len(expenditure)):
+        m=get_median(count,d)
+        if m<=expenditure[i]:
+            notification+=1 
+        count[expenditure[i-d]]-=1
+        count[expenditure[i]]+=1
+    return notification  
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
@@ -45,3 +47,4 @@ if __name__ == '__main__':
     fptr.write(str(result) + '\n')
 
     fptr.close()
+
