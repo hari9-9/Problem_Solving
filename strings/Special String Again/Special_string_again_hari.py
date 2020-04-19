@@ -8,31 +8,34 @@ import sys
 
 # Complete the substrCount function below.
 def substrCount(n, s):
-    subs=[]
-    for i in range(n+1):
-        for j in range(n-i+1):
-            subs.append(s[j:j+i])
-    subs=subs[n+1:]
-    print(subs)
-    final=[]
-    for sub in subs:
-        char_dict={}
-        for char in sub:
-            if char in char_dict:
-                char_dict[char] += 1
-            else:
-                char_dict[char] = 1
-        #print(len(char_dict))
-        if(len(char_dict)==2 and sub==sub[::-1]):
-            final.append(sub)
-        elif(len(char_dict)==1):
-            final.append(sub)
+    l = []
+    count = 0
+    cur = None
+
+# 1st pass
+    for i in range(n):
+        if s[i] == cur:
+            count += 1
         else:
-            None
+            if cur is not None:
+                l.append((cur, count))
+            cur = s[i]
+            count = 1
+    l.append((cur, count))
 
-    return(len(final))
+    ans = 0
+    print(l)    
+# 2nd pass
+    for i in l:
+        print(i[1])
+        ans += (i[1] * (i[1] + 1)) // 2
 
+# 3rd pass
+    for i in range(1, len(l) - 1):
+        if l[i - 1][0] == l[i + 1][0] and l[i][1] == 1:
+            ans += min(l[i - 1][1], l[i + 1][1])
 
+    return ans
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
