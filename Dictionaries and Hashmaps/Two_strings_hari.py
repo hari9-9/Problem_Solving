@@ -7,7 +7,8 @@ import re
 import sys
 
 # Complete the twoStrings function below.
-def twoStrings(s1, s2):
+#initial attemp fails 3 test cases(RTE)
+'''def twoStrings(s1, s2):
     subs_1=[]
     subs_2=[]
     for i in range(len(s1)):
@@ -24,6 +25,18 @@ def twoStrings(s1, s2):
         return "YES" 
     else: 
         return "NO"
+'''
+
+#second attempt using set()
+def twoStrings(s1, s2):
+    a=set(s1)
+    b=set(s2)
+    print(str((a)))
+    if(len(a.intersection(b)))>0:
+        return("YES")
+    else:
+        return("NO")
+
 
 
 if __name__ == '__main__':
