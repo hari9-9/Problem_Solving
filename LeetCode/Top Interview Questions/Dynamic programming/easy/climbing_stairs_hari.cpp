@@ -1,6 +1,5 @@
 public:
     int climbStairs(int n) {
-        //cout<<n;
         int ways[n+1];
         ways[0] = 1;
         ways[1] = 1;
