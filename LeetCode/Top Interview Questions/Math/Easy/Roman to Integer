@@ -1,0 +1,27 @@
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        d = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+        }
+        
+        lst = list(s)
+        l = len(lst)
+        
+        c, n, total = 0, 1, 0
+        while(c<len(s)):
+            if n<l and d[lst[c]] < d[lst[n]]:
+                total += d[lst[n]] - d[lst[c]]
+                c+=2
+                n+=2
+            else:
+                total += d[lst[c]]
+                c+=1
+                n+=1
+                
+        return total
