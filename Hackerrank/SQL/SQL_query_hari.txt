@@ -1,0 +1,76 @@
+https://www.hackerrank.com/challenges/revising-the-select-query/problem
+
+SELECT * FROM CITY WHERE COUNTRYCODE='USA' And Population>100000
+
+
+https://www.hackerrank.com/challenges/revising-the-select-query-2/problem
+
+SELECT NAME FROM CITY WHERE POPULATION >120000 AND COUNTRYCODE = 'USA'
+
+
+https://www.hackerrank.com/challenges/select-all-sql/problem?h_r=next-challenge&h_v=zen
+
+SELECT * FROM CITY
+
+
+https://www.hackerrank.com/challenges/select-by-id/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT * FROM CITY WHERE ID = 1661;
+
+
+https://www.hackerrank.com/challenges/japanese-cities-attributes/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT * FROM CITY WHERE COUNTRYCODE = 'JPN';
+
+
+https://www.hackerrank.com/challenges/japanese-cities-name/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT NAME FROM CITY WHERE COUNTRYCODE = 'JPN';
+
+
+https://www.hackerrank.com/challenges/weather-observation-station-1/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT CITY,STATE FROM STATION;
+
+
+https://www.hackerrank.com/challenges/weather-observation-station-3/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT DISTINCT CITY FROM STATION WHERE ID%2 =0;
+
+
+https://www.hackerrank.com/challenges/weather-observation-station-4/problem
+
+SELECT COUNT(CITY) - COUNT(DISTINCT CITY ) FROM STATION
+
+
+https://www.hackerrank.com/challenges/weather-observation-station-5/problem?h_r=next-challenge&h_v=zen
+SELECT CITY,LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) ASC,CITY ASC LIMIT 1;
+SELECT CITY,LENGTH(CITY) FROM STATION ORDER BY LENGTH(CITY) DESC,CITY ASC LIMIT 1;
+
+
+https://www.hackerrank.com/challenges/weather-observation-station-6/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+SELECT CITY FROM STATION WHERE SUBSTRING(CITY ,1,1) IN ('a','e','i','o','u');
+
+https://www.hackerrank.com/challenges/weather-observation-station-7/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+SELECT DISTINCT CITY FROM STATION WHERE SUBSTRING(CITY ,-1) IN ('a','e','i','o','u');
+
+
+https://www.hackerrank.com/challenges/weather-observation-station-8/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT DISTINCT CITY FROM STATION 
+WHERE SUBSTRING(CITY,1,1)IN('a','e','i','o','u') AND SUBSTRING(CITY,-1) IN('a','e','i','o','u');
+
+
+https://www.hackerrank.com/challenges/weather-observation-station-9/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT  DISTINCT CITY FROM STATION WHERE SUBSTRING(CITY ,1,1)  NOT IN ('a','e','i','o','u');
+
+
+https://www.hackerrank.com/challenges/weather-observation-station-10/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT DISTINCT CITY FROM STATION WHERE SUBSTRING(CITY ,-1) NOT IN ('a','e','i','o','u');
+
+
+
+
+
