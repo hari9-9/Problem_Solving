@@ -71,6 +71,50 @@ https://www.hackerrank.com/challenges/weather-observation-station-10/problem?h_r
 SELECT DISTINCT CITY FROM STATION WHERE SUBSTRING(CITY ,-1) NOT IN ('a','e','i','o','u');
 
 
+https://www.hackerrank.com/challenges/weather-observation-station-11/problem
 
+SELECT DISTINCT CITY FROM STATION WHERE (SUBSTRING(CITY , 1,1) NOT IN ('a','e','i','o','u')) or (SUBSTRING(CITY,-1) NOT IN ('a','e','i','o','u'));
+
+
+https://www.hackerrank.com/challenges/weather-observation-station-12/problem?h_r=next-challenge&h_v=zen
+
+SELECT DISTINCT CITY FROM STATION WHERE (SUBSTRING(CITY , 1,1) NOT IN ('a','e','i','o','u')) AND (SUBSTRING(CITY,-1) NOT IN ('a','e','i','o','u'));
+
+
+https://www.hackerrank.com/challenges/more-than-75-marks/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT NAME FROM STUDENTS WHERE MARKS>75 ORDER BY RIGHT(NAME , 3) , ID ASC;
+
+
+https://www.hackerrank.com/challenges/name-of-employees/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT name FROM Employee ORDER BY name
+
+
+https://www.hackerrank.com/challenges/salary-of-employees/problem?h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen&h_r=next-challenge&h_v=zen
+
+SELECT name FROM Employee WHERE (salary >2000 AND months<10) Order BY employee_id ASC
+
+
+https://www.hackerrank.com/challenges/what-type-of-triangle/problem
+SELECT
+  CASE
+    WHEN A + B <= C OR A + C <= B OR B + C <= A THEN 'Not A Triangle'
+    WHEN A = B AND B = C THEN 'Equilateral'
+    WHEN A = B OR A = C OR B = C THEN 'Isosceles'
+    ELSE 'Scalene'
+  END
+FROM TRIANGLES;
+
+
+https://www.hackerrank.com/challenges/the-pads/problem?h_r=next-challenge&h_v=zen
+
+SELECT CONCAT(Name,'(',Substring(Occupation,1,1),')') AS Name FROM occupations ORDER BY Name;
+SELECT CONCAT('There are a total of ' ,count(occupation) , ' ' , lower(occupation),'s.') as tot FROM occupations GROUP BY occupation ORDER BY tot;
+
+
+https://www.hackerrank.com/challenges/average-population/problem
+
+SELECT FLOOR(AVG(POPULATION)) FROM CITY
 
 
