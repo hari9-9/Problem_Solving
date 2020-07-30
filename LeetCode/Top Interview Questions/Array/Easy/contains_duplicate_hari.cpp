@@ -16,3 +16,26 @@ public:
         return false;
     }
 };
+
+// second attempt
+
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int len = nums.size();
+        int i,j;
+        for (i=0; i<len-1; i++)
+        {
+            j=i+1;
+            if(nums[i] == nums[j])
+            {
+                return true;
+            }
+            
+            }
+               
+        return false;
+        
+    }
+};
