@@ -1,3 +1,4 @@
+// https://practice.geeksforgeeks.org/problems/repeated-character/0
 #include <iostream>
 #include <string.h>
 using namespace std;
