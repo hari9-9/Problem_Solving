@@ -6,12 +6,12 @@
 
 #define MAX(a,b) (((a)>(b))?(a):(b))
 void calculate_the_maximum(int n, int k) {
-    int max_and= -1;
-    int max_or = -1;
-    int max_xor= -1;
+    int max_and= 0;
+    int max_or = 0;
+    int max_xor= 0;
     int cal;
     int i,j;
-    for(i=1;i<=n-1;i++)
+    for(i=1;i<=n;i++)
     {
         for(j=i+1 ; j<=n;j++)
         {
@@ -32,7 +32,7 @@ void calculate_the_maximum(int n, int k) {
             }
         }
     }
-    printf("%d\n%d\n%d" , max_and , max_or , max_xor);
+    printf("%d\n%d\n%d\n" , max_and , max_or , max_xor);
   //Write your code here.
 }
 
@@ -44,3 +44,4 @@ int main() {
  
     return 0;
 }
+
