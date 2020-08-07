@@ -118,3 +118,16 @@ https://www.hackerrank.com/challenges/average-population/problem
 SELECT FLOOR(AVG(POPULATION)) FROM CITY
 
 
+https://www.hackerrank.com/challenges/asian-population/problem
+
+SELECT SUM(CITY.POPULATION) FROM CITY ,COUNTRY WHERE CITY.COUNTRYCODE = COUNTRY.CODE AND  COUNTRY.CONTINENT='Asia';
+
+
+https://www.hackerrank.com/challenges/african-cities/problem
+
+SELECT CITY.NAME FROM CITY INNER JOIN COUNTRY ON CITY.CountryCode = COUNTRY.Code WHERE COUNTRY.CONTINENT = 'Africa'; 
+
+
+
+
+
