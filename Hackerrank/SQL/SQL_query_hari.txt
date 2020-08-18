@@ -136,9 +136,64 @@ ON CITY.COUNTRYCODE = COUNTRY.CODE
 GROUP BY COUNTRY.CONTINENT;
 
 
+https://www.hackerrank.com/challenges/the-blunder
 
+SELECT CEIL(AVG(SALARY) - AVG(REPLACE(SALARY, '0','')))
+FROM EMPLOYEES;
 
+https://www.hackerrank.com/challenges/earnings-of-employees
 
+SELECT SALARY*MONTHS AS EARNINGS, COUNT(*)
+FROM EMPLOYEE
+GROUP BY 1
+ORDER BY EARNINGS DESC
+LIMIT 1;
 
+https://www.hackerrank.com/challenges/weather-observation-station-2
 
+SELECT ROUND(SUM(LAT_N), 2), ROUND(SUM(LONG_W), 2)
+FROM STATION;
 
+https://www.hackerrank.com/challenges/weather-observation-station-15
+
+SELECT ROUND(LONG_W, 4)
+FROM STATION
+WHERE LAT_N = (
+    SELECT MAX(LAT_N)
+    FROM STATION
+    WHERE LAT_N < 137.2345
+);
+
+https://www.hackerrank.com/challenges/weather-observation-station-17
+
+SELECT ROUND(LONG_W, 4)
+FROM STATION
+WHERE LAT_N = (
+    SELECT MIN(LAT_N)
+    FROM STATION
+    WHERE LAT_N >38.7780
+);
+
+https://www.hackerrank.com/challenges/weather-observation-station-18
+
+SELECT ROUND(ABS(MIN(LAT_N)-MAX(LAT_N)) + ABS(MIN(LONG_W)-MAX(LONG_W)), 4)
+FROM STATION;
+
+https://www.hackerrank.com/challenges/weather-observation-station-19
+
+SELECT ROUND(SQRT(POWER(MAX(LAT_N)-MIN(LAT_N),2) + POWER(MAX(LONG_W)-MIN(LONG_W),2)),4)
+FROM STATION;
+
+https://www.hackerrank.com/challenges/weather-observation-station-20
+
+SELECT ROUND(S.LAT_N, 4)
+FROM STATION S
+WHERE (
+    SELECT COUNT(LAT_N)
+    FROM STATION
+    WHERE LAT_N < S.LAT_N
+) = (
+    SELECT COUNT(LAT_N)
+    FROM STATION
+    WHERE LAT_N > S.LAT_N
+);
