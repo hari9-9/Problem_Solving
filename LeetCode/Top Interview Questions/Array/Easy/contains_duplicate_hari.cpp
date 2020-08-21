@@ -24,7 +24,7 @@ public:
     bool containsDuplicate(vector<int>& nums) {
         sort(nums.begin(), nums.end());
         int len = nums.size();
-        int i,j;
+        int i,j=0;
         for (i=0; i<len-1; i++)
         {
             j=i+1;
