@@ -48,5 +48,37 @@ public:
             }
         }
         return nums[n-k];
+   
         
+//Runtime: 296 ms
+//Memory Usage: 10.1 MB
+class Solution {
+public:
+    int findKthLargest(vector<int>& nums, int k) {
+        int i,j,temp;
+        int n=nums.size();
+        for(i=0;i<k;i++)
+        {
+            bool swap=false;
+            for(j=0;j<n-i-1;j++)
+            {
+                
+                if(nums[j]>nums[j+1])
+                {
+                    swap=true;
+                    temp=nums[j];
+                    nums[j]=nums[j+1];
+                    nums[j+1]=temp;
+                    
+                }
+            }
+            if(!swap)
+                {
+                    return nums[n-k];
+                }
+        }
+        return nums[n-k];
+        
+    }
+};
    
