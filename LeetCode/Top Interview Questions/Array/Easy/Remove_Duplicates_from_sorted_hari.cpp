@@ -17,3 +17,28 @@ public:
         return nums.size();
     }
 };
+
+//second attempt
+
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int i=0;
+        int l=0;
+        int curr_ele;
+
+        while(i<nums.size())
+        {
+            curr_ele=nums[i];
+            i++;
+            while(i<nums.size() && curr_ele==nums[i])
+            {
+                i++;
+            }
+            nums[l]=curr_ele;
+            l++;
+        }
+        return l;
+        
+    }
+};
