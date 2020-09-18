@@ -34,4 +34,29 @@ public:
         return ans;
     }
 };
+
+// hmap based solution 
+class Solution {
+public:
+    vector<int> findAnagrams(string s, string p) {
+        unordered_map<char, int> dp, tmp;
+        for (int i = 0; i < p.size(); ++i) 
+            dp[p[i]]++;
+        for (int i = 0; i < p.size(); ++i) {
+            tmp[s[i]]++;
+        }
+        vector<int> ans;
+        if (tmp == dp) ans.push_back(0);
+        
+        for (int i = p.size(); i < s.size(); ++i) {
+            if (tmp[s[i - p.size()]] == 1) 
+                tmp.erase(s[i - p.size()]);
+            else 
+                tmp[s[i - p.size()]]--;
+            tmp[s[i]]++;
+            if (tmp == dp) 
+                ans.push_back(i - p.size() + 1);
+        }
+        return ans;
+    }
 };
