@@ -22,3 +22,18 @@ class Solution:
                     curr_to_fill+=1
                     c_z-=1
         return swaps
+
+
+
+# one pass Solution
+
+class Solution:
+    def minimumSteps(self, s: str) -> int:
+        s = list(s)
+        swaps = 0
+        write = 0
+        for i in range(len(s)):
+            if s[i] == '0':
+                swaps += i-write
+                write+=1
+        return swaps
