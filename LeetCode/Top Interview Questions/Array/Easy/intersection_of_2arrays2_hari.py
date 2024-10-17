@@ -27,4 +27,28 @@
                 vals.append(key[0])
 
         return vals
-        
+
+
+
+class Solution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        hash1={}
+        hash2={}
+        for i in nums1:
+            if i in hash1:
+                hash1[i]+=1
+            else:
+                hash1[i]=1
+        for i in nums2:
+            if i in hash2:
+                hash2[i]+=1
+            else:
+                hash2[i]=1
+        res = []
+        for i in hash1:
+            if i in hash2:
+                v=min(hash1[i],hash2[i])
+                while v:
+                    res.append(i)
+                    v-=1
+        return res
