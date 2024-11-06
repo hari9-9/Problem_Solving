@@ -1,7 +1,7 @@
 class Solution:
     def equalFrequency(self, word: str) -> bool:
         s = list(word)
-        s.sort()
+        #s.sort()
         hash = {}
         for i in s:
             hash[i] = hash.get(i,0)+1
@@ -16,4 +16,4 @@ class Solution:
             if len(se) == 1:
                 return True
             hash[i] = hash.get(i,0)+1
-        return False
+        return False        
