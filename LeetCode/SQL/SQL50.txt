@@ -28,3 +28,13 @@ WHERE LENGTH(content) > 15
 SELECT EmployeeUNI.unique_id , Employees.name
 FROM Employees LEFT JOIN EmployeeUNI
 ON EmployeeUNI.id = Employees.id
+
+
+SELECT
+    p.product_name , s.year , s.price
+FROM
+    Sales s
+JOIN
+    Product p
+ON
+    s.product_id = p.product_id
