@@ -22,3 +22,9 @@ ORDER BY author_id
 SELECT tweet_id
 FROM Tweets
 WHERE LENGTH(content) > 15
+
+
+
+SELECT EmployeeUNI.unique_id , Employees.name
+FROM Employees LEFT JOIN EmployeeUNI
+ON EmployeeUNI.id = Employees.id
