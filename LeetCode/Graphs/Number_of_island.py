@@ -33,4 +33,27 @@ class Solution:
                     ans+=1
         return ans
 
-        
+
+
+class Solution:
+
+    def dfs(self,i,j,visited,grid):
+        if i>=len(grid) or j >=len(grid[0]):
+            return
+        if (i,j) in visited:
+            return
+        visited.add((i,j))
+        dirs = [[0,1],[1,0],[0,-1],[-1,0]]
+        for dx , dy in dirs:
+            if 0<=i+dx<len(grid) and 0<=j+dy<len(grid[0]) and grid[i+dx][j+dy]=='1':
+                self.dfs(i+dx , j+dy , visited,grid)
+
+    def numIslands(self, grid: List[List[str]]) -> int:
+        visited = set()
+        ans = 0
+        for i in range(len(grid)):
+            for j in range(len(grid[0])):
+                if grid[i][j]=='1' and ((i,j) not in visited):
+                    self.dfs(i,j,visited,grid)
+                    ans+=1
+        return ans
