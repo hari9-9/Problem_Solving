@@ -37,3 +37,28 @@ class Solution:
         i = [0]
         ans = self.solve(root,i,k)
         return ans
+
+
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+
+    def inord(self,root,heap,k):
+        if not root:
+            return
+        self.inord(root.left,heap,k)
+        heapq.heappush(heap,-root.val)
+        if len(heap)>k:
+            heapq.heappop(heap)
+        self.inord(root.right,heap,k)
+
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        if not root:
+            return -1
+        heap = []
+        self.inord(root,heap,k)
+        return -1*heapq.heappop(heap)
