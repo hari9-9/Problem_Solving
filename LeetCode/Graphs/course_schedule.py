@@ -51,3 +51,34 @@ class Solution:
                 if self.color(graph,visited,i):
                     return False
         return True
+
+
+
+
+class Solution:
+
+
+    def solve(self , nodes , visited , i):
+        if visited[i]==1:
+            return False
+        if visited[i]==2:
+            return True
+        visited[i]=1
+        for pre in nodes[i]:
+            if not self.solve(nodes, visited, pre):
+                return False
+        visited[i] = 2
+        return True
+
+
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        visited = [0] * numCourses
+        nodes = {i:[] for i in range(numCourses)}
+        for course , pre in prerequisites:
+            nodes[course].append(pre)
+        print(nodes)
+        for i in range(numCourses):
+            if not self.solve(nodes,visited , i):
+                return False
+
+        return True
